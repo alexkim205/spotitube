@@ -75,4 +75,4 @@ optional arguments:
 
 ## Authors
 
-* **Alex Kim** - *Initial work* [Github](https://github.com/alexkim205)
+* **[Alex Kim](https://github.com/alexkim205)** - Original author
