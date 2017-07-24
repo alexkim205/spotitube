@@ -31,45 +31,28 @@ eyeD3 >= 0.8
 $ pip install eyeD3
 ```
 
-#### [google_api_python_client]()
+#### [google_api_python_client](https://github.com/google/google-api-python-client)
 ```
 google_api_python_client >= 1.6.2
 $ pip install --upgrade google-api-python-client
 ```
 
 ## Quick Start
-
 ```
-$ python spotify.py -h
+$ python spotify.py -c CLIENT -cs CLIENT_SECRET -u URI
+```
+
+### Options
+```
 usage: spotify.py [-h] [-c CLIENT] [-cs CLIENT_SECRET] [-u URI]
 
 required arguments:
-  -c, --client            Spotify client key
-  -cs, --client-secret    Spotify client secret key
-  -u, --uri               Spotify playlist URI
+  -c, --client              Spotify client key
+  -cs, --client-secret      Spotify client secret key
+  -u, --uri                 Spotify playlist URI
 
 optional arguments:
-  -h, --help              show this help message and exit
-```
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
+  -h, --help                show this help message and exit
 ```
 
 ## Deployment
@@ -78,30 +61,11 @@ Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* [Spotipy](https://github.com/plamere/spotipy) - Lightweight Python Spotify API
+* [EyeD3](https://github.com/nicfit/eyeD3) - Used to edit metadata with Python audio data toolkit (ID3 and MP3)
+* [Youtube_dl](https://github.com/rg3/youtube-dl) - Used to download Youtube videos/audio
+* [Google_api_python_client](https://github.com/google/google-api-python-client) - Youtube API
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* **Alex Kim** - *Initial work*
