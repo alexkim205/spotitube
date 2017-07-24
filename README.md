@@ -6,8 +6,6 @@ A lightweight tool that downloads tracks in any Spotify playlist to local Music 
 
 ## Prerequisites
 
-What things you need to install the software and how to install them
-
 #### [youtube_dl](https://github.com/rg3/youtube-dl)
 ```
 youtube_dl >= 2017.7.23
@@ -37,22 +35,24 @@ google_api_python_client >= 1.6.2
 $ pip install --upgrade google-api-python-client
 ```
 
-## Quick Start
+## How to Use
 ```
 $ python spotify.py -c CLIENT -cs CLIENT_SECRET -u URI
 ```
+
 
 ### Options
 ```
 usage: spotify.py [-h] [-c CLIENT] [-cs CLIENT_SECRET] [-u URI]
 
 required arguments:
-  -c, --client              Spotify client key
-  -cs, --client-secret      Spotify client secret key
-  -u, --uri                 Spotify playlist URI
+  -c CLIENT, --client CLIENT                            Spotify client key
+  -cs CLIENT_SECRET, --client-secret CLIENT_SECRET      Spotify client secret key
+  -u URI, --uri URI                                     Spotify playlist URI
 
 optional arguments:
-  -h, --help                show this help message and exit
+  -h, --help                                            show this help message and exit
+  -a AUDIO_QUALITY, --audio-quality AUDIO_QUALITY       Audio bitrate (128, 160, 192, 256*, 320 kbit/s)
 ```
 
 ## Deployment
@@ -68,4 +68,4 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* **Alex Kim** - *Initial work*
+* **Alex Kim** - *Initial work* [Github](https://github.com/alexkim205)
