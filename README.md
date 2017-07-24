@@ -1,7 +1,7 @@
 # Spotitube
 A lightweight tool that downloads tracks in any Spotify playlist to local Music folder as mp3 files.
 
-## Description
+## A Short Description
 **spotitube** is a command-line program to download mp3 files of tracks in user Spotify playlists. It is not platform specific, and will run on Mac OS X, Windows, and Linux. It is released on public domain, so you can modify, redistribute, and use freely.
 
 ## Prerequisites
@@ -37,23 +37,20 @@ google_api_python_client >= 1.6.2
 $ pip install --upgrade google-api-python-client
 ```
 
-## Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+## Quick Start
 
 ```
-Give the example
-```
+$ python spotify.py -h
+usage: spotify.py [-h] [-c CLIENT] [-cs CLIENT_SECRET] [-u URI]
 
-And repeat
+required arguments:
+  -c, --client            Spotify client key
+  -cs, --client-secret    Spotify client secret key
+  -u, --uri               Spotify playlist URI
 
+optional arguments:
+  -h, --help              show this help message and exit
 ```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
