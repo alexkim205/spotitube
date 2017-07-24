@@ -23,7 +23,7 @@ def set_yids(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, DEVELOPER_KEY):
     yt = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, developerKey=DEVELOPER_KEY, cache_discovery=False)
     return yt
 
-def youtube_search(yt, search, max_results = 1):
+def youtube_search(yt, search, max_results = 3):
     search_response = yt.search().list(
     q=search,
     part="id,snippet",
@@ -55,14 +55,22 @@ def youtubedl(yt, s_list, metadata, pl_dir, songlistdir, audioquality):
         for song, data in zip(s_list, metadata):
             a = normalize('NFKD', song[0]).encode('ascii','ignore')
             t = normalize('NFKD', song[1]).encode('ascii','ignore')
-            ytid = youtube_search(yt, [a, t])
-            if not ytid:
+            ytid_l = youtube_search(yt, [a, t])
+
+            if not ytid_l:
                 continue
-            else:
-                ytid = ytid[0]
+            else: # Post Check videos (expand with function later)
+                for vid in ytid_l:
+                    link = ["http://www.youtube.com/watch?v=" + vid.keys()[0]]
+                    info_dict = ydl.extract_info(link[0], download=False)
+                    duration = info_dict.get("duration", None)
+                    if duration < 60*15:
+                        ytid = vid
+                        break
+
             path = pl_dir + ', '.join(data[4]).replace('/', '') + " - " + data[0].replace('/', '') + ".mp3"
             removepath = pl_dir + ytid.keys()[0] + ".mp3"
-            link = ["https://www.youtube.com/watch?v=" + ytid.keys()[0]]
+
             ydl.download(link)
 
             response = requests.get(data[2].encode("utf-8")).content
@@ -93,4 +101,4 @@ def youtubedl(yt, s_list, metadata, pl_dir, songlistdir, audioquality):
                 f.write(data[6].encode("utf-8"))
                 f.write("\n")
 
-            print (t + "\t" + "Song downloaded").expandtabs(30)
+            print (t + "\t" + "Song downloaded").expandtabs(60)

@@ -32,10 +32,10 @@ def get_search_info(sp, pl_info, songlistdir):
         title = song["track"]["name"]
 
         if song["track"]["uri"].encode("utf-8") in ids: # check if song is already downloaded and in songlist.txt
-            print (title + "\t" + "Song already downloaded").expandtabs(30)
+            print (title + "\t" + "Song already downloaded").expandtabs(60)
             continue
         if (not u'US' in song["track"]["available_markets"]) and song["track"]["available_markets"]: # check if song is available in US
-            print (title + "\t" + "Song not available in the US").expandtabs(30)
+            print (title + "\t" + "Song not available in the US").expandtabs(60)
             continue
 
         album = song["track"]["album"]["name"]
