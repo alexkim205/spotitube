@@ -8,36 +8,30 @@ A lightweight tool that downloads tracks in any Spotify playlist to local Music 
 
 What things you need to install the software and how to install them
 
-### [youtube_dl](https://github.com/rg3/youtube-dl)
+#### [youtube_dl](https://github.com/rg3/youtube-dl)
 ```
 youtube_dl >= 2017.7.23
 $ sudo -H pip install --upgrade youtube-dl
 ```
-### requests
+#### requests
 ```
 requests >= 2.11.0
 $ pip install requests
 ```
 
-### [ffmpeg](https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg)
-```
-ffmpeg >= 3.3.2
-```
-Installation directions in link.
-
-### [spotipy](https://github.com/plamere/spotipy)
+#### [spotipy](https://github.com/plamere/spotipy)
 ```
 spotipy >= 2.4.4
 $ pip install spotipy
 ```
 
-### [eyeD3](https://github.com/nicfit/eyeD3)
+#### [eyeD3](https://github.com/nicfit/eyeD3)
 ```
 eyeD3 >= 0.8
 $ pip install eyeD3
 ```
 
-### [google_api_python_client]()
+#### [google_api_python_client]()
 ```
 google_api_python_client >= 1.6.2
 $ pip install --upgrade google-api-python-client
