@@ -41,9 +41,9 @@ Go to your Spotify Playlist, right click, Share, copy URI:
 ### Obtain Spotify Client & Client Secret Key
 To access user and public playlists, Spotify requires you to use their API which gives you a unique Client Key and a Client Secret Key relevant to only YOUR Spotify account.
 
-l. Login with your credentials here: [https://developer.spotify.com/my-applications/#!/](https://developer.spotify.com/my-applications/#!/)
-l. Go to My Applications on the sidebar and create an app. Your application name/description does not matter.
-l. Your Client ID and Client Secret Keys will be generated.
+1. Login with your credentials here: [https://developer.spotify.com/my-applications/#!/](https://developer.spotify.com/my-applications/#!/)
+2. Go to My Applications on the sidebar and create an app. Your application name/description does not matter.
+3. Your Client ID and Client Secret Keys will be generated.
 
 ### Command-Line
 Using your keys and URI:
