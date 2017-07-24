@@ -4,37 +4,46 @@ A lightweight tool that downloads tracks in any Spotify playlist to local Music 
 ## Description
 **spotitube** is a command-line program to download mp3 files of tracks in user Spotify playlists. It is not platform specific, and will run on Mac OS X, Windows, and Linux. It is released on public domain, so you can modify, redistribute, and use freely.
 
-### Prerequisites
+## Prerequisites
 
 What things you need to install the software and how to install them
 
 ### [youtube_dl](https://github.com/rg3/youtube-dl)
 ```
 youtube_dl >= 2017.7.23
+$ sudo -H pip install --upgrade youtube-dl
 ```
 ### requests
 ```
 requests >= 2.11.0
-pip install requests
+$ pip install requests
 ```
 
 ### [ffmpeg](https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg)
 ```
 ffmpeg >= 3.3.2
 ```
+Installation directions in link.
 
 ### [spotipy](https://github.com/plamere/spotipy)
 ```
 spotipy >= 2.4.4
+$ pip install spotipy
 ```
 
 ### [eyeD3](https://github.com/nicfit/eyeD3)
 ```
 eyeD3 >= 0.8
-google_api_python_client >= 1.6.2
+$ pip install eyeD3
 ```
 
-### Installing
+### [google_api_python_client]()
+```
+google_api_python_client >= 1.6.2
+$ pip install --upgrade google-api-python-client
+```
+
+## Installing
 
 A step by step series of examples that tell you have to get a development env running
 
