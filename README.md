@@ -42,13 +42,13 @@ To access user and public playlists, Spotify requires you to use their API which
 ### Command-Line
 Using your keys and URI:
 ```
-$ python spotify.py -c CLIENT -cs CLIENT_SECRET -u URI
+$ python main.py -c CLIENT -cs CLIENT_SECRET -u URI
 ```
 
 
 ### Options
 ```
-usage: spotify.py [-h] [-c CLIENT] [-cs CLIENT_SECRET] [-u URI]
+usage: main.py [-h] [-c CLIENT] [-cs CLIENT_SECRET] [-u URI]
 
 required arguments:
   -c CLIENT, --client CLIENT                            Spotify client key
