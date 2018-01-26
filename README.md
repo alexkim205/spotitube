@@ -42,22 +42,31 @@ To access user and public playlists, Spotify requires you to use their API which
 ### Command-Line
 Using your keys and URI:
 ```
-$ python main.py -c CLIENT -cs CLIENT_SECRET -u URI
+$ python main.py -k KEY_FILE -u URI
 ```
 
+### Making your KEY_FILE
+Make a 'key.txt' file and point the program to it:
+
+`key.txt`
+```
+SPOTIFY-C:	[Spotify Client Key]
+SPOTIFY-CS:	[Spotify Client Secret Key]
+```
 
 ### Options
 ```
-usage: main.py [-h] [-c CLIENT] [-cs CLIENT_SECRET] [-u URI]
+usage: main.py [-h] [-k KEY_FILE] [-u URI] [-a AUDIO_QUALITY]
 
 required arguments:
-  -c CLIENT, --client CLIENT                            Spotify client key
-  -cs CLIENT_SECRET, --client-secret CLIENT_SECRET      Spotify client secret key
-  -u URI, --uri URI                                     Spotify playlist URI
+  -k KEY_FILE, --key-file KEY_FILE
+                        read Spotify client/secret keys from text file
+  -u URI, --uri URI     Spotify playlist URI
 
 optional arguments:
-  -h, --help                                            show this help message and exit
-  -a AUDIO_QUALITY, --audio-quality AUDIO_QUALITY       Audio bitrate (128, 160, 192, 256*, 320 kbit/s)
+  -h, --help            show this help message and exit
+  -a AUDIO_QUALITY, --audio-quality AUDIO_QUALITY
+                        Audio bitrate (128, 160, 192, 256*, 320 kbit/s)
 ```
 
 ## Built With
