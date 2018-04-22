@@ -32,13 +32,13 @@ if __name__ == "__main__":
     if args.audio_quality:
         audioquality = args.audio_quality
     else:
-        audioquality = '256'
+        audioquality = '160'
         DEVELOPER_KEY = "AIzaSyAiafRmd3aEjduD7AZX7yJ0qQLAej4cI5E"
         YOUTUBE_API_SERVICE_NAME = "youtube"
         YOUTUBE_API_VERSION = "v3"
 
     # Read keys from text file
-    dt = pd.read_csv('spotify_keys.txt', sep="\t", header=None)
+    dt = pd.read_csv(key_file, sep="\t", header=None)
     SPOTIFY_CLIENT_ID = dt[1][0]
     SPOTIFY_CLIENT_SECRET_ID = dt[1][1]
 

@@ -25,9 +25,9 @@ def set_yids(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, DEVELOPER_KEY):
 
 def youtube_search(yt, search, max_results = 3):
     search_response = yt.search().list(
-    q=search,
-    part="id,snippet",
-    maxResults=max_results
+        q=search,
+        part="id,snippet",
+        maxResults=max_results
     ).execute()
 
     videos = []
@@ -43,12 +43,12 @@ def youtube_search(yt, search, max_results = 3):
 def youtubedl(yt, s_list, metadata, pl_dir, songlistdir, audioquality):
     ydl_opts = {
         'format': 'bestaudio/best',
-        'quiet': True,
+        'quiet': False,
         'outtmpl': pl_dir + '%(id)s.%(ext)s',
         'postprocessors': [{
-        'key': 'FFmpegExtractAudio',
-        'preferredcodec': 'mp3',
-        'preferredquality': audioquality
+            'key': 'FFmpegExtractAudio',
+            'preferredcodec': 'mp3',
+            'preferredquality': audioquality,
         }]
     }
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
