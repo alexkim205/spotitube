@@ -26,7 +26,6 @@ $ python main.py -u USERNAME -k KEY_FILE -u URI
 ```
 
 ### Making your KEY_FILE
-Make a 'key.txt' file and point the program to it:
 
 `key.txt`
 ```
