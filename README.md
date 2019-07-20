@@ -52,7 +52,6 @@ optional arguments:
                         Audio bitrate (128, 160, 192, 256*, 320 kbit/s)
 ```
 
-
 ## Authors
 
 * **[Alex Kim](https://github.com/alexkim205)** - Original author
