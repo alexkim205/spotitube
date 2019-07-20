@@ -1,4 +1,5 @@
-from __future__ import unicode_literals
+from __future__ import print_function
+# from __future__ import unicode_literals
 
 import spotify
 import youtube
@@ -10,14 +11,13 @@ from unicodedata import normalize
 if __name__ == "__main__":
     # PARSE ARGS
     parser = argparse.ArgumentParser()
-    optional = parser._action_groups.pop() # Edited this line
+    optional = parser._action_groups.pop()
     required = parser.add_argument_group('required arguments')
-    required.add_argument("-k", "--key-file", help="read Spotify client/secret keys from text file")
-    #    required.add_argument("-c", "--client", help="Spotify client key")
-    #    required.add_argument("-cs", "--client-secret", help="Spotify client secret key")
+    required.add_argument("-n", "--username", help="Username")
+    required.add_argument("-k", "--key-file", help="Read Spotify client/secret keys from text file")
     required.add_argument("-u", "--uri", help="Spotify playlist URI")
     optional.add_argument("-a", "--audio-quality", help="Audio bitrate (128, 160, 192, 256*, 320 kbit/s)")
-    parser._action_groups.append(optional) # added this line
+    parser._action_groups.append(optional)
 
     # Set Args
     args = parser.parse_args()
@@ -25,17 +25,15 @@ if __name__ == "__main__":
         key_file = args.key_file
     if args.uri:
         uri = args.uri
-        #    if args.client:
-        #        SPOTIFY_CLIENT_ID = args.client
-        #    if args.client_secret:
-        #        SPOTIFY_CLIENT_SECRET_ID = args.client_secret
     if args.audio_quality:
         audioquality = args.audio_quality
-    else:
-        audioquality = '160'
-        DEVELOPER_KEY = "AIzaSyAiafRmd3aEjduD7AZX7yJ0qQLAej4cI5E"
-        YOUTUBE_API_SERVICE_NAME = "youtube"
-        YOUTUBE_API_VERSION = "v3"
+    if args.username:
+        username = args.username
+    audioquality = args.audio_quality if args.audio_quality else '160'
+    
+    DEVELOPER_KEY = "AIzaSyAiafRmd3aEjduD7AZX7yJ0qQLAej4cI5E"
+    YOUTUBE_API_SERVICE_NAME = "youtube"
+    YOUTUBE_API_VERSION = "v3"
 
     # Read keys from text file
     dt = pd.read_csv(key_file, sep="\t", header=None)
@@ -49,13 +47,12 @@ if __name__ == "__main__":
     music_dir = os.path.expanduser("~/Music/")
 
     # Spotify get tracks and generate search lists
-    username = uri.split(':')[2]
-    playlist_id = uri.split(':')[4]
+    playlist_id = uri.split(':')[2]
 
     pl_info, pl = spotify.get_playlist_info(sp, username, playlist_id, limit = 100)
-    pl_name = normalize('NFKD', pl['name']).encode('ascii','ignore')
+    pl_name = normalize('NFKD', pl['name'])
 
-    pl_dir = music_dir + pl_name + "/"
+    pl_dir = music_dir + pl_name  + "/"
     songlistdir = pl_dir + "songlist.txt"
     if not os.path.isdir(pl_dir):
         os.makedirs(pl_dir)

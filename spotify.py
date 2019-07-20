@@ -1,4 +1,5 @@
-from __future__ import unicode_literals
+from __future__ import print_function
+# from __future__ import unicode_literals
 
 # SPOTIFY DEPENDENCIES
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -31,12 +32,12 @@ def get_search_info(sp, pl_info, songlistdir):
     for song in pl_info["items"]:
         title = song["track"]["name"]
 
-        if song["track"]["uri"].encode("utf-8") in ids: # check if song is already downloaded and in songlist.txt
-            print (title + "\t" + "Song already downloaded").expandtabs(60)
+        if song["track"]["uri"] in ids: # check if song is already downloaded and in songlist.txt
+            print((title + "\t" + "Song already downloaded").expandtabs(60))
             continue
-        if (not u'US' in song["track"]["available_markets"]) and song["track"]["available_markets"]: # check if song is available in US
-            print (title + "\t" + "Song not available in the US").expandtabs(60)
-            continue
+        # if (not u'US' in song["track"]["available_markets"]) and song["track"]["available_markets"]: # check if song is available in US
+        #     print((title + "\t" + "Song not available in the US").expandtabs(60))
+        #     continue
 
         album = song["track"]["album"]["name"]
         coverart = song["track"]["album"]["images"][0]["url"] # take largest coverart
@@ -45,8 +46,8 @@ def get_search_info(sp, pl_info, songlistdir):
         for artist in song["track"]["artists"]:
             artists.append(artist["name"])
         metadatartists = tuple(artists)
-        genre = ', '.join(sp.artist(song["track"]["artists"][0]["uri"])["genres"]).title().encode("utf-8")
-        idnom = song["track"]["uri"].encode("utf-8")
+        genre = ', '.join(sp.artist(song["track"]["artists"][0]["uri"])["genres"]).title()
+        idnom = song["track"]["uri"]
         metadata.append((title, album, coverart, track_nom, metadatartists, genre, idnom))
 
         search_title = re.sub(r'\([^)]*\)', '', title)

@@ -5,29 +5,10 @@ A lightweight tool that uses Spotify and Youtube to downloads tracks from any Sp
 **spotitube** is a command-line program to download mp3 files of tracks in user Spotify playlists. It is not platform specific, and will run on Mac OS X, Windows, and Linux. It is released on public domain, so you can modify, redistribute, and use freely.
 
 ## Prerequisites
-* [youtube_dl](https://github.com/rg3/youtube-dl)
-* requests
-* [spotipy](https://github.com/plamere/spotipy)
-* [eyeD3](https://github.com/nicfit/eyeD3)
-* [google_api_python_client](https://github.com/google/google-api-python-client)
+* An installation of conda
+* ffmpeg, for MacOS users who have Homebrew, run `brew install ffmpeg`
 
-
-```
-youtube_dl >= 2017.7.23
-$ sudo -H pip install --upgrade youtube-dl
-
-requests >= 2.11.0
-$ pip install requests
-
-spotipy >= 2.4.4
-$ pip install spotipy
-
-eyeD3 >= 0.8
-$ pip install eyeD3
-
-google_api_python_client >= 1.6.2
-$ pip install --upgrade google-api-python-client
-```
+Create a conda environment with the proper libraries by running `conda env create -f env.yml` in the root directory.
 
 ## How to Use
 ### Obtain Spotify Playlist URI
@@ -39,10 +20,9 @@ To access user and public playlists, Spotify requires you to use their API which
 2. Go to My Applications on the sidebar and create an app. Your application name/description does not matter.
 3. Your Client ID and Client Secret Keys will be generated.
 
-### Command-Line
-Using your keys and URI:
+### Run it in command line
 ```
-$ python main.py -k KEY_FILE -u URI
+$ python main.py -u USERNAME -k KEY_FILE -u URI
 ```
 
 ### Making your KEY_FILE
@@ -56,11 +36,14 @@ SPOTIFY-CS:	[Spotify Client Secret Key]
 
 ### Options
 ```
-usage: main.py [-h] [-k KEY_FILE] [-u URI] [-a AUDIO_QUALITY]
+$ python main.py -h
+usage: main.py [-h] [-n USERNAME] [-k KEY_FILE] [-u URI] [-a AUDIO_QUALITY]
 
 required arguments:
+  -n USERNAME, --username USERNAME
+                        Username
   -k KEY_FILE, --key-file KEY_FILE
-                        read Spotify client/secret keys from text file
+                        Read Spotify client/secret keys from text file
   -u URI, --uri URI     Spotify playlist URI
 
 optional arguments:
@@ -69,12 +52,6 @@ optional arguments:
                         Audio bitrate (128, 160, 192, 256*, 320 kbit/s)
 ```
 
-## Built With
-
-* [Spotipy](https://github.com/plamere/spotipy) - Lightweight Python Spotify API
-* [EyeD3](https://github.com/nicfit/eyeD3) - Used to edit metadata with Python audio data toolkit (ID3 and MP3)
-* [Youtube_dl](https://github.com/rg3/youtube-dl) - Used to download Youtube videos/audio
-* [Google_api_python_client](https://github.com/google/google-api-python-client) - Youtube API
 
 ## Authors
 
